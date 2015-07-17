@@ -1,2 +1,2 @@
 # yii2-validators
-Yiis validator class.
+Yii2 validator class.
