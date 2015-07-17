@@ -1,0 +1,20 @@
+{
+    "name": "yadjet/yii2-validators",
+    "description": "Yii2 Validators",
+    "license": "BSD",
+    "authors": [
+        {
+            "name": "hiscaler",
+            "email": "hiscaler@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "yadjet\\validators\\": "src/yadjet/validators"
+        }
+    }
+}
