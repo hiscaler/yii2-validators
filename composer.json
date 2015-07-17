@@ -1,7 +1,9 @@
 {
     "name": "yadjet/yii2-validators",
     "description": "Yii2 Validators",
-    "license": "BSD",
+    "keywords": ["yii2", "validators"],
+    "type": "project",
+    "license": "BSD-3-Clause",
     "authors": [
         {
             "name": "hiscaler",
