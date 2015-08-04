@@ -8,9 +8,11 @@ use yii\validators\Validator;
 /**
  * 邮政编码验证
  */
-class ZipcodeValidator extends Validator {
+class ZipcodeValidator extends Validator
+{
 
-    public function validateAttribute($model, $attribute) {
+    public function validateAttribute($model, $attribute)
+    {
         $value = $model->$attribute;
         if ($this->isEmpty($value) && $this->skipOnEmpty) {
             return;

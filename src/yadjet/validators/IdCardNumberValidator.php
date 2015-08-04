@@ -8,11 +8,13 @@ use yii\validators\Validator;
 /**
  * 大陆身份证验证规则
  */
-class IdCardNumberValidator extends Validator {
+class IdCardNumberValidator extends Validator
+{
 
     public $toggleField = '';
 
-    public function validateAttribute($model, $attribute) {
+    public function validateAttribute($model, $attribute)
+    {
         $value = $model->$attribute;
         if (!$this->validateValue($value)) {
             $message = $this->message !== null ? $this->message : Yii::t('validator', '{attribute} is not a valid id card number.');
@@ -29,7 +31,8 @@ class IdCardNumberValidator extends Validator {
         }
     }
 
-    public function validateValue($value) {
+    public function validateValue($value)
+    {
         if (strlen($value) == 18) {
             return $this->idCardNumberCheckIs18($value);
         } elseif ((strlen($value) == 15)) {
@@ -40,7 +43,8 @@ class IdCardNumberValidator extends Validator {
         }
     }
 
-    public function checkBirthday($idCardNumber, $birthday) {
+    public function checkBirthday($idCardNumber, $birthday)
+    {
         if (!empty($birthday)) {
             $length = strlen($idCardNumber);
             if ($length == 15) {
@@ -54,7 +58,8 @@ class IdCardNumberValidator extends Validator {
     }
 
     // 计算身份证校验码，根据国家标准GB 11643-1999
-    public function idCardNumberVerfiy($idCardNumberBase) {
+    public function idCardNumberVerfiy($idCardNumberBase)
+    {
         if (strlen($idCardNumberBase) != 17) {
             return false;
         }
@@ -72,7 +77,8 @@ class IdCardNumberValidator extends Validator {
     }
 
     // 将15位身份证升级到18位
-    public function idCardNumber15218($idCardNumber) {
+    public function idCardNumber15218($idCardNumber)
+    {
         if (strlen($idCardNumber) != 15) {
             return false;
         } else {
@@ -88,7 +94,8 @@ class IdCardNumberValidator extends Validator {
     }
 
     // 18位身份证校验码有效性检查
-    public function idCardNumberCheckIs18($idcard) {
+    public function idCardNumberCheckIs18($idcard)
+    {
         if (strlen($idcard) != 18) {
             return false;
         }

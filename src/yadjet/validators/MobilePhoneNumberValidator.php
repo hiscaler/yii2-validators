@@ -8,9 +8,11 @@ use yii\validators\Validator;
 /**
  * 手机号码验证
  */
-class MobilePhoneNumberValidator extends Validator {
+class MobilePhoneNumberValidator extends Validator
+{
 
-    public function validateAttribute($model, $attribute) {
+    public function validateAttribute($model, $attribute)
+    {
         $value = $model->$attribute;
         if ($this->isEmpty($value) && $this->skipOnEmpty) {
             return;

@@ -5,9 +5,11 @@ namespace yadjet\validators;
 use Yii;
 use yii\validators\Validator;
 
-class PhoneNumberValidator extends Validator {
+class PhoneNumberValidator extends Validator
+{
 
-    public function validateAttribute($model, $attribute) {
+    public function validateAttribute($model, $attribute)
+    {
         $value = $model->$attribute;
         if ($this->isEmpty($value) && $this->skipOnEmpty) {
             return;
