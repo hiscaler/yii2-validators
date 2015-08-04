@@ -1,5 +1,7 @@
 <?php
 
+namespace yadjet\validators;
+
 use yii\validators\Validator;
 
 /**

@@ -1,8 +1,8 @@
 <?php
 
-use yii\validators\Validator;
-
 namespace yadjet\validators;
+
+use yii\validators\Validator;
 
 /**
  * 手机号码验证
