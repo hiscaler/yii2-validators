@@ -2,11 +2,12 @@
 
 namespace yadjet\validators;
 
-use Yii;
 use yii\validators\Validator;
 
 /**
  * 大陆身份证验证规则
+ * 
+ * @author hiscaler <hiscaler@gmail.com>
  */
 class IdCardNumberValidator extends Validator
 {
@@ -17,14 +18,14 @@ class IdCardNumberValidator extends Validator
     {
         $value = $model->$attribute;
         if (!$this->validateValue($value)) {
-            $message = $this->message !== null ? $this->message : Yii::t('validator', '{attribute} is not a valid id card number.');
+            $message = $this->message !== null ? $this->message : "{$value} 不是一个有效的身份证号码。";
             $this->addError($model, $attribute, $message);
         } else {
             if (!empty($this->toggleField)) {
                 $attr = $this->toggleField;
                 $birthday = $model->$attr;
                 if (!$this->checkBirthday($value, $birthday)) {
-                    $message = $this->message !== null ? $this->message : Yii::t('validator', '{attribute} 与指定出生年月不相符.');
+                    $message = $this->message !== null ? $this->message : "{$value} 与指定出生年月不相符。";
                     $this->addError($model, $attribute, $message);
                 }
             }

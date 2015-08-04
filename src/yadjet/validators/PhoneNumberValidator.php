@@ -2,9 +2,13 @@
 
 namespace yadjet\validators;
 
-use Yii;
 use yii\validators\Validator;
 
+/**
+ * 电话号码验证
+ * 
+ * @author hiscaler <hiscaler@gmail.com>
+ */
 class PhoneNumberValidator extends Validator
 {
 
@@ -16,7 +20,7 @@ class PhoneNumberValidator extends Validator
         }
 
         if (!preg_match("/^((\(\d{3}\))|(\d{3}\-))?(\(0\d{2,3}\)|0\d{2,3}-)?[1-9]\d{6,7}$/", $value)) {
-            $message = $this->message !== null ? $this->message : Yii::t('validator', '{attribute} not phone.');
+            $message = $this->message !== null ? $this->message : "{$value} 不是一个有效的电话号码。";
             $this->addError($model, $attribute, $message);
         }
     }
