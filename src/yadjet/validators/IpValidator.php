@@ -14,7 +14,7 @@ class IpValidator extends Validator
 
     public $allowEmpty = false;
 
-    protected function validateAttribute($object, $attribute)
+    public function validateAttribute($object, $attribute)
     {
         $value = $object->$attribute;
         if ($this->allowEmpty && $this->isEmpty($value)) {

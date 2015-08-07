@@ -12,7 +12,7 @@ use yii\validators\Validator;
 class ChineseValidator extends Validator
 {
 
-    protected function validateAttribute($object, $attribute)
+    public function validateAttribute($object, $attribute)
     {
         $value = $object->$attribute;
         if (!preg_match("^[" . chr(0xa1) . "-" . chr(0xff) . "]+$", $value)) {

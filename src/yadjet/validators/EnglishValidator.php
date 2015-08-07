@@ -12,7 +12,7 @@ use yii\validators\Validator;
 class EnglishValidator extends Validator
 {
 
-    protected function validateAttribute($object, $attribute)
+    public function validateAttribute($object, $attribute)
     {
         $value = $object->$attribute;
         if (!preg_match("/^[a-zA-Z]+$/", $value)) {

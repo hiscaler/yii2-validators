@@ -14,7 +14,7 @@ class QqValidator extends Validator
 
     public $allowEmpty = true;
 
-    protected function validateAttribute($object, $attribute)
+    public function validateAttribute($object, $attribute)
     {
         $value = $object->$attribute;
         if ($this->allowEmpty && $this->isEmpty($value)) {
