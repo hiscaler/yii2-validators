@@ -19,7 +19,7 @@ class MobilePhoneNumberValidator extends Validator
             return;
         }
 
-        if (!preg_match("/^((\(\d{3}\))|(\d{3}\-))?13|15\d{9}$/", $value)) {
+        if (!preg_match("/^((\(\d{3}\))|(\d{3}\-))?13|14|15|17|18\d{9}$/", $value)) {
             $message = $this->message !== null ? $this->message : "{$value} 不是一个有效的手机号码。";
             $this->addError($model, $attribute, $message);
         }
