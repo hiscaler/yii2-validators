@@ -6,7 +6,7 @@ use yii\validators\Validator;
 
 /**
  * 邮政编码验证
- * 
+ *
  * @author hiscaler <hiscaler@gmail.com>
  */
 class ZipcodeValidator extends Validator

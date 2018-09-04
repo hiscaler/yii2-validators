@@ -6,7 +6,7 @@ use yii\validators\Validator;
 
 /**
  * 判断是否为合法的 IP 地址
- * 
+ *
  * @author hiscaler <hiscaler@gmail.com>
  */
 class IpValidator extends Validator

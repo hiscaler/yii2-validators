@@ -6,7 +6,7 @@ use yii\validators\Validator;
 
 /**
  * 判断是否为英文字母
- * 
+ *
  * @author hiscaler <hiscaler@gmail.com>
  */
 class EnglishValidator extends Validator

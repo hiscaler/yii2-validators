@@ -6,7 +6,7 @@ use yii\validators\Validator;
 
 /**
  * 大陆身份证验证规则
- * 
+ *
  * @author hiscaler <hiscaler@gmail.com>
  */
 class IdCardNumberValidator extends Validator
@@ -38,6 +38,7 @@ class IdCardNumberValidator extends Validator
             return $this->idCardNumberCheckIs18($value);
         } elseif ((strlen($value) == 15)) {
             $value = $this->idCardNumber15218($value);
+
             return $this->idCardNumberCheckIs18($value);
         } else {
             return false;
@@ -52,6 +53,7 @@ class IdCardNumberValidator extends Validator
                 $idCardNumber = $this->idCardNumber15218($idCardNumber);
             }
             $birthday = preg_replace('[\D]', '', $birthday);
+
             return (substr($idCardNumber, 6, 8) == $birthday) ? true : false;
         } else {
             return true;
@@ -74,6 +76,7 @@ class IdCardNumberValidator extends Validator
         }
         $mod = $checksum % 11;
         $verify_number = $verify_number_list[$mod];
+
         return $verify_number;
     }
 
@@ -91,6 +94,7 @@ class IdCardNumberValidator extends Validator
             }
         }
         $idCardNumber = $idCardNumber . $this->idCardNumberVerfiy($idCardNumber);
+
         return $idCardNumber;
     }
 
