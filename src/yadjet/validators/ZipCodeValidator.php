@@ -9,7 +9,7 @@ use yii\validators\Validator;
  *
  * @author hiscaler <hiscaler@gmail.com>
  */
-class ZipcodeValidator extends Validator
+class ZipCodeValidator extends Validator
 {
 
     public function validateAttribute($model, $attribute)
