@@ -1,7 +1,10 @@
 {
     "name": "yadjet/yii2-validators",
     "description": "Yii2 Validators",
-    "keywords": ["yii2", "validators"],
+    "keywords": [
+        "yii2",
+        "validators"
+    ],
     "type": "project",
     "license": "BSD-3-Clause",
     "authors": [
@@ -13,7 +16,8 @@
     "minimum-stability": "stable",
     "require": {
         "php": ">=5.4",
-        "yiisoft/yii2": "~2.0.0"
+        "yiisoft/yii2": "~2.0.0",
+        "phpunit/phpunit": "6.5"
     },
     "autoload": {
         "psr-4": {
