@@ -14,6 +14,11 @@ class IdCardNumberValidator extends Validator
 
     public $toggleField = '';
 
+    /**
+     * @param \yii\base\Model $model
+     * @param string $attribute
+     * @throws \yii\base\NotSupportedException
+     */
     public function validateAttribute($model, $attribute)
     {
         $value = $model->$attribute;
@@ -60,7 +65,12 @@ class IdCardNumberValidator extends Validator
         }
     }
 
-    // 计算身份证校验码，根据国家标准GB 11643-1999
+    /**
+     * 计算身份证校验码，根据国家标准 GB 11643-1999
+     *
+     * @param $idCardNumberBase
+     * @return bool|mixed
+     */
     public function idCardNumberVerfiy($idCardNumberBase)
     {
         if (strlen($idCardNumberBase) != 17) {
@@ -80,7 +90,12 @@ class IdCardNumberValidator extends Validator
         return $verify_number;
     }
 
-    // 将15位身份证升级到18位
+    /**
+     * 将15位身份证升级到18位
+     *
+     * @param $idCardNumber
+     * @return bool|string
+     */
     public function idCardNumber15218($idCardNumber)
     {
         if (strlen($idCardNumber) != 15) {
@@ -98,14 +113,19 @@ class IdCardNumberValidator extends Validator
         return $idCardNumber;
     }
 
-    // 18位身份证校验码有效性检查
-    public function idCardNumberCheckIs18($idcard)
+    /**
+     * 18位身份证校验码有效性检查
+     *
+     * @param $idCardNumber
+     * @return bool
+     */
+    public function idCardNumberCheckIs18($idCardNumber)
     {
-        if (strlen($idcard) != 18) {
+        if (strlen($idCardNumber) != 18) {
             return false;
         }
-        $idcard_base = substr($idcard, 0, 17);
-        if ($this->idCardNumberVerfiy($idcard_base) != strtoupper(substr($idcard, 17, 1))) {
+        $idCardNumberBase = substr($idCardNumber, 0, 17);
+        if ($this->idCardNumberVerfiy($idCardNumberBase) != strtoupper(substr($idCardNumber, 17, 1))) {
             return false;
         } else {
             return true;
