@@ -14,7 +14,7 @@ class DomainValidator extends Validator
 
     public $allowEmpty = true;
 
-    private function isValidDomain($value)
+    private function isValid($value)
     {
         return preg_match("/[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+\.?/", $value) ? true : false;
     }
@@ -26,7 +26,7 @@ class DomainValidator extends Validator
             return;
         }
 
-        if (!$this->isValidDomain($value)) {
+        if (!$this->isValid($value)) {
             $message = $this->message !== null ? $this->message : "{$value} 不是一个有效的域名。";
             $this->addError($object, $attribute, $message);
         }
@@ -34,7 +34,7 @@ class DomainValidator extends Validator
 
     public function validateValue($value)
     {
-        if (!$this->isValidDomain($value)) {
+        if (!$this->isValid($value)) {
             return [$this->message, []];
         }
 

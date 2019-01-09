@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 use yadjet\validators\DomainValidator;
 
 /**
- * Class ArrayHelperTest
+ * Class DomainValidatorTest
  *
  * @package yadjet\helpers
  * @author hiscaler <hiscaler@gmail.com>
