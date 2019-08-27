@@ -7,6 +7,7 @@ use yii\validators\Validator;
 /**
  * 手机号码验证
  *
+ * @package yadjet\validators
  * @author hiscaler <hiscaler@gmail.com>
  */
 class MobilePhoneNumberValidator extends Validator

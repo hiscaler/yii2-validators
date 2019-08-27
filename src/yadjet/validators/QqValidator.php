@@ -7,6 +7,7 @@ use yii\validators\Validator;
 /**
  * 判断是否为有效的 QQ 号码
  *
+ * @package yadjet\validators
  * @author hiscaler <hiscaler@gmail.com>
  */
 class QqValidator extends Validator

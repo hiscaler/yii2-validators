@@ -7,6 +7,7 @@ use yii\validators\Validator;
 /**
  * 判断是否为中文
  *
+ * @package yadjet\validators
  * @author hiscaler <hiscaler@gmail.com>
  */
 class ChineseValidator extends Validator

@@ -7,6 +7,7 @@ use yii\validators\Validator;
 /**
  * 大陆身份证验证规则
  *
+ * @package yadjet\validators
  * @author hiscaler <hiscaler@gmail.com>
  */
 class IdCardNumberValidator extends Validator

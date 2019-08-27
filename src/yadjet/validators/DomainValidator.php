@@ -7,6 +7,7 @@ use yii\validators\Validator;
 /**
  * 判断是否为有效的域名
  *
+ * @package yadjet\validators
  * @author hiscaler <hiscaler@gmail.com>
  */
 class DomainValidator extends Validator
