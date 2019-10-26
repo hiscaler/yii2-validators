@@ -13,6 +13,11 @@ use yii\validators\Validator;
 class ZipCodeValidator extends Validator
 {
 
+    private function isValid($value)
+    {
+        return preg_match("/^[1-9]\d{5}$/", $value);
+    }
+
     public function validateAttribute($model, $attribute)
     {
         $value = $model->$attribute;
@@ -20,10 +25,19 @@ class ZipCodeValidator extends Validator
             return;
         }
 
-        if (!preg_match("/^[1-9]\d{5}$/", $value)) {
+        if (!$this->isValid($value)) {
             $message = $this->message !== null ? $this->message : "{$value} 不是一个有效的邮政编码。";
             $this->addError($model, $attribute, $message);
         }
+    }
+
+    public function validateValue($value)
+    {
+        if (!$this->isValid($value)) {
+            return [$this->message, []];
+        }
+
+        return null;
     }
 
 }
